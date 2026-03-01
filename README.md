@@ -143,9 +143,10 @@ s = "Python"
 m = 3
 n = 2
 print((s[:m]) * n)
-2️⃣0️⃣ Swap characters in string
-s = "abcd"
 
-# Swap first and last
+
+Swap characters in string
+s = "abcd"
+//Swap first and last
 new_s = s[-1] + s[1:-1] + s[0]
 print(new_s)
