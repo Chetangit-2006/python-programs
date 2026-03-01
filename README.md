@@ -145,7 +145,7 @@ n = 2
 print((s[:m]) * n)
 
 
-Swap characters in string
+#Swap characters in string
 s = "abcd"
 //Swap first and last
 new_s = s[-1] + s[1:-1] + s[0]
