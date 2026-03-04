@@ -1,0 +1,31 @@
+#Task1
+//Take input from user
+numbers = tuple(map(int, input("Enter integers separated by space: ").split()))
+print("\nTuple is:", numbers)
+//a) Total number of items
+print("Total number of items:", len(numbers))
+//b) Last item in tuple
+print("Last item:", numbers[-1])
+//c) Tuple elements in reverse order
+print("Tuple in reverse order:", numbers[::-1])
+//d) Check if integer 5 exists
+if 5 in numbers:
+    print("Yes, 5 is present in the tuple.")
+else:
+    print("No, 5 is not present in the tuple.")
+//e) Remove first and last items, sort remaining
+if len(numbers) > 2:
+    remaining = numbers[1:-1]     # remove first and last
+    sorted_remaining = tuple(sorted(remaining))
+    print("After removing first & last and sorting:", sorted_remaining)
+else:
+    print("Not enough elements to remove first and last.")
+
+output: 
+Enter integers separated by space: 10 5 8 3 5 12
+Tuple is: (10, 5, 8, 3, 5, 12)
+Total number of items: 6
+Last item: 12
+Tuple in reverse order: (12, 5, 3, 8, 5, 10)
+Yes, 5 is present in the tuple.
+After removing first & last and sorting: (3, 5, 8)
