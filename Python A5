@@ -29,3 +29,31 @@ Last item: 12
 Tuple in reverse order: (12, 5, 3, 8, 5, 10)
 Yes, 5 is present in the tuple.
 After removing first & last and sorting: (3, 5, 8)
+
+
+
+#Task2
+//Take prices input
+prices = tuple(map(int, input("Enter prices of sold items separated by space: ").split()))
+print("\nPrices Tuple:", prices)
+//a) Total number of items sold
+print("Total number of items sold:", len(prices))
+//b) Cheapest item price
+print("Cheapest item price:", min(prices))
+//c) Costliest item price
+max_price = max(prices)
+print("Costliest item price:", max_price)
+//d) Prices in ascending order
+print("Prices in ascending order:", tuple(sorted(prices)))
+//e) Number of costliest items sold
+count_max = prices.count(max_price)
+print("Number of costliest items sold:", count_max)
+
+output:
+Enter prices of sold items separated by space: 250 120 450 300 450 180
+Prices Tuple: (250, 120, 450, 300, 450, 180)
+Total number of items sold: 6
+Cheapest item price: 120
+Costliest item price: 450
+Prices in ascending order: (120, 180, 250, 300, 450, 450)
+Number of costliest items sold: 2
