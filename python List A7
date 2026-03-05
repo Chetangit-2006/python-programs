@@ -236,3 +236,31 @@ print(outer())
 //Output:
 //Inner Function Called
 
+# Task 20: Write a Python program to detect the number of local variables declared in a function.
+def sample_function():
+    a = 10
+    b = 20
+    c = 30
+    print("Hello")
+print(sample_function.__code__.co_nlocals)
+// Output:
+//3
+
+# Task 21: Write a Python program that invokes a function 
+# after a specified period of time.
+import time
+import math
+def calculate_square_root(num):
+    print(math.sqrt(num))
+print("Square root after specific milliseconds:")
+time.sleep(1)   # Wait for 1 second
+calculate_square_root(16)
+time.sleep(1)   # Wait for 1 second
+calculate_square_root(100)
+time.sleep(1)   # Wait for 1 second
+calculate_square_root(25100)
+// Output:
+//Square root after specific milliseconds:
+//4.0
+//10.0
+//158.42979517754858
