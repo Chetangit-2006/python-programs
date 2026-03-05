@@ -1,0 +1,238 @@
+#Task 1: Write a Python function to find the maximum of three numbers.
+def find_max(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+print(find_max(10, 25, 15))
+//Output:
+//25
+
+# Task 2: Write a Python function to sum all the numbers in a list.
+def sum_list(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+sample = (8, 2, 3, 0, 7)
+print(sum_list(sample))
+//Output:
+//20
+
+# Task 3: Write a Python function to multiply all the numbers in a list.
+def multiply_list(numbers):
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
+sample = (8, 2, 3, -1, 7)
+print(multiply_list(sample))
+//Output:
+//-336
+
+# Task 4: Write a Python program to reverse a string.
+def reverse_string(s):
+    return s[::-1]
+sample = "1234abcd"
+print(reverse_string(sample))
+//Output:
+//dcba4321
+
+# Task 5: Write a Python function to calculate the factorial of a number.
+def factorial(n):
+    if n < 0:
+        return "Factorial not defined for negative numbers"
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+print(factorial(5))
+//Output:
+//120
+
+# Task 6: Write a Python function to check whether a number falls within a given range.
+def check_range(num, start, end):
+    if num in range(start, end + 1):
+        print("The number is in the range")
+    else:
+        print("The number is not in the range")
+check_range(5, 1, 10)
+//Output:
+//The number is in the range
+
+# Task 7: Write a Python function that accepts a string and counts 
+# the number of upper and lower case letters.
+def count_case(s):
+    upper = 0
+    lower = 0
+    for char in s:
+        if char.isupper():
+            upper += 1
+        elif char.islower():
+            lower += 1
+    print("No. of Upper case characters :", upper)
+    print("No. of Lower case characters :", lower)
+sample = 'The quick Brow Fox'
+count_case(sample)
+//Output:
+//No. of Upper case characters : 3
+//No. of Lower case characters : 12
+
+# Task 8: Write a Python function that takes a list and returns 
+# a new list with distinct elements from the first list.
+def unique_list(lst):
+    unique = []
+    for item in lst:
+        if item not in unique:
+            unique.append(item)
+    return unique
+sample = [1,2,3,3,3,3,4,5]
+print(unique_list(sample))
+//Output:
+//[1, 2, 3, 4, 5]
+
+# Task 9: Write a Python function that takes a number as a parameter 
+# and checks whether the number is prime or not.
+def is_prime(num):
+    if num <= 1:
+        return "Not Prime"
+    for i in range(2, num):
+        if num % i == 0:
+            return "Not Prime"
+    return "Prime"
+print(is_prime(7))
+//Output:
+//Prime
+
+# Task 10: Write a Python program to print the even numbers from a given list.
+def even_numbers(lst):
+    even_list = []
+    for num in lst:
+        if num % 2 == 0:
+            even_list.append(num)
+    return even_list
+sample = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(even_numbers(sample))
+//Output:
+//[2, 4, 6, 8]
+
+# Task 11: Write a Python function to check whether a number is "Perfect" or not.
+def is_perfect(num):
+    if num <= 0:
+        return "Not Perfect"
+    sum_divisors = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum_divisors += i
+    if sum_divisors == num:
+        return "Perfect Number"
+    else:
+        return "Not Perfect Number"
+print(is_perfect(6))
+print(is_perfect(28))
+//Output:
+//Perfect Number
+//Perfect Number
+
+# Task 12: Write a Python function that checks whether a passed string 
+# is a palindrome or not.
+def is_palindrome(s):
+    s = s.replace(" ", "").lower()
+    if s == s[::-1]:
+        return "Palindrome"
+    else:
+        return "Not Palindrome"
+print(is_palindrome("madam"))
+print(is_palindrome("nurses run"))
+//Output:
+//Palindrome
+//Palindrome
+
+# Task 13: Write a Python function that prints out the first n rows of Pascal's triangle.
+def pascal_triangle(n):
+    for i in range(n):
+        num = 1
+        for j in range(i + 1):
+            print(num, end=" ")
+            num = num * (i - j) // (j + 1)
+        print()
+//Example
+pascal_triangle(5)
+Output:
+//1
+//1 1
+//1 2 1
+//1 3 3 1
+//1 4 6 4 1
+
+# Task 14: Write a Python function to check whether a string is a pangram or not.
+import string
+def is_pangram(sentence):
+    alphabet = set(string.ascii_lowercase)
+    return set(sentence.lower()) >= alphabet
+// Example
+print(is_pangram("The quick brown fox jumps over the lazy dog"))
+// Output:
+//True
+
+# Task 15: Write a Python program that accepts a hyphen-separated 
+# sequence of words and prints them sorted alphabetically.
+def sort_words(sequence):
+    words = sequence.split("-")
+    words.sort()
+    return "-".join(words)
+sample = "green-red-yellow-black-white"
+print(sort_words(sample))
+///Output:
+//black-green-red-white-yellow
+
+# Task 16: Write a Python function to create and print a list 
+# where values are squares of numbers between 1 and 30.
+def square_list():
+    squares = []
+    for i in range(1, 31):
+        squares.append(i ** 2)
+    return squares
+print(square_list())
+//Output:
+//[1, 4, 9, 16, 25, 36, ..., 900]
+
+# Task 17: Write a Python program to create a chain of function decorators.
+def bold(func):
+    def wrapper():
+        return "<b>" + func() + "</b>"
+    return wrapper
+def italic(func):
+    def wrapper():
+        return "<i>" + func() + "</i>"
+    return wrapper
+def underline(func):
+    def wrapper():
+        return "<u>" + func() + "</u>"
+    return wrapper
+@bold
+@italic
+@underline
+def text():
+    return "Hello"
+print(text())
+//Output:
+//<b><i><u>Hello</u></i></b>
+
+# Task 18: Write a Python program to execute a string containing Python code.
+code = "print('Hello, World!')"
+exec(code)
+// Output:
+//Hello, World!
+
+# Task 19: Write a Python program to access a function inside a function.
+def outer():
+    def inner():
+        return "Inner Function Called"
+    return inner()
+print(outer())
+//Output:
+//Inner Function Called
+
