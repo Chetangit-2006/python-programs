@@ -16,3 +16,51 @@
 "data": ["Information processed by computers."],
 "program": ["Set of instructions for a computer."]
 }
+/// code
+import json
+from difflib import get_close_matches
+
+# Load dictionary data
+data = json.load(open("data.json"))
+
+# Function to search word
+def translate(word):
+
+    word = word.lower()
+
+    if word in data:
+        return data[word]
+
+    elif len(get_close_matches(word, data.keys())) > 0:
+
+        suggestion = get_close_matches(word, data.keys())[0]
+
+        choice = input("Did you mean '%s'? Enter Y if yes or N if no: " % suggestion)
+
+        if choice.lower() == "y":
+            return data[suggestion]
+
+        elif choice.lower() == "n":
+            return ["Word does not exist. Please check spelling."]
+
+        else:
+            return ["Invalid input."]
+
+    else:
+        return ["Word not found in dictionary."]
+
+
+print("-------- English Dictionary Application --------")
+
+while True:
+
+    word = input("\nEnter a word (type 'exit' to quit): ")
+
+    if word.lower() == "exit":
+        print("Thank you for using the dictionary!")
+        break
+
+    output = translate(word)
+
+    for meaning in output:
+        print("-", meaning)
