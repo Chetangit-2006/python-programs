@@ -1,0 +1,18 @@
+//dictionary words
+{
+"apple": ["A fruit that grows on trees."],
+"banana": ["A long curved fruit with yellow skin."],
+"computer": ["An electronic device used to process data."],
+"python": ["A programming language.", "A large snake."],
+"keyboard": ["Input device used for typing."],
+"monitor": ["Output device used to display images."],
+"internet": ["A global network connecting computers."],
+"algorithm": ["A step-by-step process to solve a problem."],
+"database": ["Organized collection of data."],
+"software": ["Programs used to operate computers."],
+"hardware": ["Physical parts of a computer."],
+"network": ["A group of connected computers."],
+"developer": ["Person who writes computer programs."],
+"data": ["Information processed by computers."],
+"program": ["Set of instructions for a computer."]
+}
