@@ -55,6 +55,12 @@ from difflib import get_close_matches
 # Load dictionary data
 data = json.load(open("data.json"))
 
+# Example categories (you can modify based on your JSON words)
+technical_words = ["computer", "algorithm", "database", "software", "hardware",
+                   "network", "developer", "data", "program"]
+
+non_technical_words = ["apple", "banana"]
+
 # Function to search word
 def translate(word):
 
@@ -82,17 +88,37 @@ def translate(word):
         return ["Word not found in dictionary."]
 
 
-print("-------- English Dictionary Application --------")
+print("-------- Welcome to English Dictionary Application --------")
 
 while True:
 
-    word = input("\nEnter a word (type 'exit' to quit): ")
+    # Ask word category
+    category = input("\nWhich type of word do you want? (technical / non-technical) or type 'exit' to quit: ")
 
-    if word.lower() == "exit":
-        print("Thank you for using the dictionary!")
+    if category.lower() == "exit":
+        print("Thank you for using the dictionary! Have a great day!")
         break
+
+    if category.lower() not in ["technical", "non-technical"]:
+        print("Please choose either 'technical' or 'non-technical'.")
+        continue
+
+    print("Nice choice! Let's find a word for you.")
+
+    word = input("Enter a word: ")
 
     output = translate(word)
 
+    print("\nMeaning:")
+
     for meaning in output:
         print("-", meaning)
+
+    # Ask satisfaction
+    satisfaction = input("\nAre you satisfied with the result? (yes/no): ")
+
+    if satisfaction.lower() == "yes":
+        print("Great! I'm happy I could help you. 😊")
+
+    else:
+        print("We apologize for the inconvenience. Let's try another word.")
