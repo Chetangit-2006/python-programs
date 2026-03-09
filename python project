@@ -1,3 +1,5 @@
+print("Welcome to English Dictionary Application")
+
 //dictionary words
 {
 "apple": ["A fruit that grows on trees."],
