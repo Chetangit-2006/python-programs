@@ -52,14 +52,16 @@ print("Welcome to English Dictionary Application")
 import json
 from difflib import get_close_matches
 
+print("\n===================================================")
+print("📘        ENGLISH DICTIONARY APPLICATION")
+print("===================================================")
+print("Hello User! Welcome to your smart dictionary.")
+print("You can search meanings of many words easily.")
+print("Type 'exit' anytime to close the application.")
+print("===================================================\n")
+
 # Load dictionary data
 data = json.load(open("data.json"))
-
-# Example categories (you can modify based on your JSON words)
-technical_words = ["computer", "algorithm", "database", "software", "hardware",
-                   "network", "developer", "data", "program"]
-
-non_technical_words = ["apple", "banana"]
 
 # Function to search word
 def translate(word):
@@ -73,52 +75,56 @@ def translate(word):
 
         suggestion = get_close_matches(word, data.keys())[0]
 
-        choice = input("Did you mean '%s'? Enter Y if yes or N if no: " % suggestion)
+        choice = input(f"\n🤔 Did you mean '{suggestion}'? (Y/N): ")
 
         if choice.lower() == "y":
             return data[suggestion]
 
         elif choice.lower() == "n":
-            return ["Word does not exist. Please check spelling."]
+            return ["❌ Sorry, this word does not exist in our dictionary. Please check the spelling."]
 
         else:
-            return ["Invalid input."]
+            return ["⚠ Invalid input. Please enter Y or N."]
 
     else:
-        return ["Word not found in dictionary."]
+        return ["❌ Oops! Word not found in the dictionary. Try another word."]
 
-
-print("-------- Welcome to English Dictionary Application --------")
 
 while True:
 
-    # Ask word category
-    category = input("\nWhich type of word do you want? (technical / non-technical) or type 'exit' to quit: ")
+    print("\n-------------------------------------------")
+    category = input("🔎 Which type of word do you want?\n(technical / non-technical) or type 'exit' to quit: ")
 
     if category.lower() == "exit":
-        print("Thank you for using the dictionary! Have a great day!")
+        print("\n===================================================")
+        print("🙏 Thank you for using the English Dictionary!")
+        print("We hope it helped you learn something new today.")
+        print("Have a wonderful day ahead! 😊")
+        print("===================================================\n")
         break
 
     if category.lower() not in ["technical", "non-technical"]:
-        print("Please choose either 'technical' or 'non-technical'.")
+        print("⚠ Please choose either 'technical' or 'non-technical'.")
         continue
 
-    print("Nice choice! Let's find a word for you.")
+    print("\n👍 Great choice! Let's find the meaning of your word.")
 
-    word = input("Enter a word: ")
+    word = input("✍ Enter a word: ")
 
     output = translate(word)
 
-    print("\nMeaning:")
+    print("\n📖 Meaning:")
 
     for meaning in output:
-        print("-", meaning)
+        print(" •", meaning)
 
     # Ask satisfaction
-    satisfaction = input("\nAre you satisfied with the result? (yes/no): ")
+    satisfaction = input("\n🙂 Are you satisfied with the result? (yes/no): ")
 
     if satisfaction.lower() == "yes":
-        print("Great! I'm happy I could help you. 😊")
+        print("🎉 Awesome! I'm glad I could help you.")
 
     else:
-        print("We apologize for the inconvenience. Let's try another word.")
+        print("😔 We're sorry about that.")
+        print("Please try another word or check the spelling.")
+        print("We'll try our best to help you next time!")
