@@ -28,14 +28,13 @@ for line in f1:
 f1.close()
 f2.close()
 print("File copied without comments.")
-
 //output:
 # This is a comment
 print("Hello")
 # Another comment
 print("Python Programming")
-
+//
 print("Hello")
 print("Python Programming")
-
+//
 File copied without comments.
