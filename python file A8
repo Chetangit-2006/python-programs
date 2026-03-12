@@ -6,16 +6,15 @@ f2.write(data.upper())
 f1.close()
 f2.close()
 print("File copied in uppercase.")
-
 //output:
 hello world
 python programming
 welcome to file handling
-
+//
 HELLO WORLD
 PYTHON PROGRAMMING
 WELCOME TO FILE HANDLING
-
+//
 File copied in uppercase.
 
 
