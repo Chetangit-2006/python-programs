@@ -34,3 +34,27 @@ for i in range(2):   # you can make it 10
 print("\nManager Details:")
 for x in list1:
     x.show_data()
+//output
+Enter details of Manager 1
+Enter name: Aryan
+Enter age: 20
+Enter salary: 50000
+Enter department: IT
+
+Enter details of Manager 2
+Enter name: Rahul
+Enter age: 25
+Enter salary: 60000
+Enter department: HR
+
+Manager Details:
+Name: Aryan
+Age: 20
+Salary: 50000.0
+Department: IT
+----------------------
+Name: Rahul
+Age: 25
+Salary: 60000.0
+Department: HR
+----------------------
