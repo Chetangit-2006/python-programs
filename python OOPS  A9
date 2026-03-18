@@ -1,0 +1,36 @@
+
+class Employee:
+    def get_data(self):
+        self.name = input("Enter name: ")
+        self.age = int(input("Enter age: "))
+        self.salary = float(input("Enter salary: "))
+
+    def show_data(self):
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Salary:", self.salary)
+
+
+class Manager(Employee):
+    def get_data(self):
+        super().get_data()
+        self.department = input("Enter department: ")
+
+    def show_data(self):
+        super().show_data()
+        print("Department:", self.department)
+        print("----------------------")
+
+
+# Main Program
+list1 = []
+
+for i in range(2):   # you can make it 10
+    print("\nEnter details of Manager", i+1)
+    m = Manager()
+    m.get_data()
+    list1.append(m)
+
+print("\nManager Details:")
+for x in list1:
+    x.show_data()
