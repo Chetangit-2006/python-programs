@@ -1,31 +1,25 @@
+#code1:
 import pandas as pd
-
-# Read CSV file
+//Read CSV file
 df = pd.read_csv("books.csv")
-
-# a) Print complete report
+//a) Print complete report
 print("\n--- Complete Book Report ---")
 print(df)
-
-# b) List of books by a given author
+//b) List of books by a given author
 author_name = input("\nEnter author name: ")
 print("\nBooks by author:")
 print(df[df['author'] == author_name])
-
-# c) List of books by a given publisher
+//c) List of books by a given publisher
 publisher_name = input("\nEnter publisher name: ")
 print("\nBooks by publisher:")
 print(df[df['publisher'] == publisher_name])
-
-# d) Cheapest and costliest book
+//d) Cheapest and costliest book
 print("\nCheapest Book:")
 print(df.loc[df['price'].idxmin()])
-
 print("\nCostliest Book:")
 print(df.loc[df['price'].idxmax()])
-
-# e) Sort by year of publication
+//e) Sort by year of publication
 print("\nBooks sorted by year:")
 print(df.sort_values(by='year'))
 
-//output:
+
