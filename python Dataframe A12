@@ -88,3 +88,30 @@ else:
 print("\nList of Developers:")
 developers = df[df["Designation"] == "Developer"]
 print(developers)
+
+//output:input:
+Employee ID | Employee Name | Department  | Designation
+-------------------------------------------------------
+101         | Aryan         | Automotive  | Developer
+102         | Rahul         | IT          | Tester
+103         | Sneha         | Automotive  | Manager
+104         | Amit          | Automotive  | Developer
+//output:1
+Employee Data:
+   Employee ID Employee Name Department Designation
+0          101         Aryan  Automotive   Developer
+1          102         Rahul          IT      Tester
+2          103         Sneha  Automotive     Manager
+3          104          Amit  Automotive   Developer
+//output:2
+Employees working in Automotive domain:
+   Employee ID Employee Name Department Designation
+0          101         Aryan  Automotive   Developer
+2          103         Sneha  Automotive     Manager
+3          104          Amit  Automotive   Developer
+//output:3
+Enter Employee ID: 101
+//output:4
+Employee Details:
+   Employee ID Employee Name Department Designation
+0          101         Aryan  Automotive   Developer
