@@ -37,6 +37,19 @@ Diamonds DataFrame:
 3   0.29  Premium     I     VS2   62.4   58.0    334  4.20  4.23  2.63
 4   0.31     Good     J     SI2   63.3   58.0    335  4.34  4.35  2.75
 
+Mean price for each cut:
+cut
+Good       331.0
+Ideal      326.0
+Premium    330.0
+Name: price, dtype: float64
+
+
+
+
+
+
+
 #code2:
 import pandas as pd
 // Read Excel file
