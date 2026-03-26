@@ -1,0 +1,81 @@
+#code1:
+import matplotlib.pyplot as plt
+//Sample Data (you can replace with your dataset)
+months = [1,2,3,4,5,6,7,8,9,10,11,12]
+total_profit = [2500, 2630, 2140, 3400, 3600, 2760, 2980, 3700, 3540, 1990, 2340, 2900]
+facecream = [2500, 2630, 2140, 3400, 3600, 2760, 2980, 3700, 3540, 1990, 2340, 2900]
+facewash  = [1500, 1200, 1340, 1130, 1740, 1555, 1650, 1780, 1890, 2100, 1760, 1550]
+products = {
+    "Face Cream": facecream,
+    "Face Wash": facewash
+}
+// a) Line Plot (Total Profit)
+plt.plot(months, total_profit, marker='o')
+plt.title("Total Profit per Month")
+plt.xlabel("Month")
+plt.ylabel("Profit")
+plt.show()
+//b) Multiline Plot (All Products)
+for product, sales in products.items():
+    plt.plot(months, sales, marker='o', label=product)
+plt.title("Product Sales Data")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.legend()
+plt.show()
+//c) Bar Chart (Face Cream & Face Wash)
+import numpy as np
+x = np.arange(len(months))
+width = 0.35
+plt.bar(x - width/2, facecream, width, label="Face Cream")
+plt.bar(x + width/2, facewash, width, label="Face Wash")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.title("Face Cream vs Face Wash Sales")
+plt.legend()
+plt.show()
+// d) Pie Chart (Total Yearly Sales)
+total_sales = {
+    "Face Cream": sum(facecream),
+    "Face Wash": sum(facewash)
+}
+]
+plt.pie(total_sales.values(), labels=total_sales.keys(), autopct='%1.1f%%')
+plt.title("Yearly Sales Distribution")
+plt.show()
+
+#code2:
+import matplotlib.pyplot as plt
+//Sample Recruitment Data
+companies = ["Microsoft", "Google", "Amazon", "IBM", "Deloitte", "Capgemini", "Amdocs"]
+recruitments = [120, 150, 180, 90, 110, 130, 100]
+//a) Bar Chart
+plt.bar(companies, recruitments)
+plt.title("Company Recruitment Data")
+plt.xlabel("Companies")
+plt.ylabel("No. of Recruitments")
+plt.xticks(rotation=30)
+plt.show()
+//b) Pie Chart
+plt.pie(recruitments, labels=companies, autopct='%1.1f%%')
+plt.title("Recruitment Share")
+plt.show()
+//c) Customized Pie Chart
+plt.pie(recruitments, labels=companies, autopct='%1.1f%%',
+        explode=[0,0.1,0,0,0,0,0], shadow=True)
+plt.title("Customized Pie Chart")
+plt.show()
+//d) Doughnut Chart
+plt.pie(recruitments, labels=companies, autopct='%1.1f%%')
+centre_circle = plt.Circle((0,0), 0.70, fc='white')
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+plt.title("Doughnut Chart")
+plt.show()
+//e) Comparison (IBM vs Amdocs)
+labels = ["IBM", "Amdocs"]
+values = [90, 100]
+plt.bar(labels, values)
+plt.title("IBM vs Amdocs Recruitment Comparison")
+plt.ylabel("No. of Recruitments")
+plt.show()
